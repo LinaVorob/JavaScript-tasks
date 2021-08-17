@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset='utf-8'>
+	<title>hello</title>
+</head>
+
+<body>
+	<script>
+		'use strict'
+		function sum_of_money() {
+			let money = +prompt("Укажите необходимую сумму для зачисления: ");
+			if (money % 10 == 1) {
+				alert(`Ваша сумма в ${money} рубль успешно зачислена.`);
+			} else if (money % 10 < 5 && money % 10 > 1) {
+				alert(`Ваша сумма в ${money} рубля успешно зачислена.`);
+			} else {
+				alert(`Ваша сумма в ${money} рублей успешно зачислена.`);
+			}
+		}
+
+		sum_of_money();
+	</script>
+</body>

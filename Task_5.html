@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset='utf-8'>
+	<title>hello</title>
+</head>
+
+<body>
+	<script>
+		'use strict'
+		function sum_nums(num_1, num_2) {
+			return num_1 + num_2;
+		}
+
+		function subtrc_nums(num_1, num_2) {
+			return num_1 - num_2;
+		}
+
+		function multiply_nums(num_1, num_2) {
+			return num_1 * num2_;
+		}
+
+		function divided_nums(num_1, num_2) {
+			return num_1 / num_2;
+		}
+
+		function mathOperation(arg1, arg2, operation) {
+			operation = operation.prototype.toLowerCase();
+			switch (operation) {
+				case "сумма":
+				case "сложение":
+					return arg1 + arg2;
+				case "вычитание":
+				case "разность":
+					return arg1 - arg2;
+				case "умножение":
+				case "произведение":
+					return arg1 * arg2;
+				case "деление":
+				case "частное":
+					return arg1 / arg2;
+			}
+		}
+		let math_operation = prompt("Выполняемая операция: ");
+		let arg_first = +prompt("Первый операнд: ");
+		let arg_second = +prompt("Второй операнд: ");
+		alert(mathOperation(arg_first, arg_second, math_operation));
+	</script>
+</body>
