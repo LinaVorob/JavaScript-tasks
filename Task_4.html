@@ -1,34 +1,54 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<title>hello</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
 </head>
 
 <body>
 	<script>
-		'use strict'
-		function sum_nums(num_1, num_2) {
-			return num_1 + num_2;
-		}
+		'use strict';
+		const products = [
+			{
+				id: 3,
+				price: 127,
+				photos: [
+					"1.jpg",
+					"2.jpg",
+				]
+			},
+			{
+				id: 5,
+				price: 499,
+				photos: []
+			},
+			{
+				id: 10,
+				price: 26,
+				photos: [
+					"3.jpg"
+				]
+			},
+			{
+				id: 8,
+				price: 78,
+			},
+		];
+		const result = products.filter(product => 'photos' in product && product.photos.length > 0)
+		//products.forEach(function (product) {
+		//	product.price *= 0.85;
+		//});
+		console.log(result);
 
-		function subtrc_nums(num_1, num_2) {
-			return num_1 - num_2;
-		}
+		products.sort(function (a, b) {
+			return a.price - b.price
+		});
+		console.log(products);
 
-		function multiply_nums(num_1, num_2) {
-			return num_1 * num_2;
-		}
-
-		function divided_nums(num_1, num_2) {
-			return num_1 / num_2;
-		}
-
-		let num_first = +prompt("Первый операнд: ");
-		let num_second = +prompt("Второй операнд: ");
-		alert(sum_nums(num_first, num_second));
-		alert(subtrc_nums(num_first, num_second));
-		alert(multiply_nums(num_first, num_second));
-		alert(divided_nums(num_first, num_second));
 	</script>
 </body>
+
+</html>
