@@ -38,9 +38,9 @@
 			},
 		];
 		const result = products.filter(product => 'photos' in product && product.photos.length > 0)
-		//products.forEach(function (product) {
-		//	product.price *= 0.85;
-		//});
+		products.forEach(function (product) {
+			product.price *= 0.85;
+		});
 		console.log(result);
 
 		products.sort(function (a, b) {
