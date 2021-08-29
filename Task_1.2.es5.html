@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+        // a)
+        function Post(author, text, date) {
+            this.author = author;
+            this.text = text;
+            this.date = date;
+        }
+
+        Post.prototype.edit = function (newText) {
+            this.text = newText;
+        }
+
+        //b)
+        function AttachedPost(author, text, date) {
+            Post.call(this, author, text, date);
+            this.highlighted = false;
+        }
+        AttachedPost.prototype = Object.create(Post.prototype);
+        AttachedPost.prototype.constructor = AttachedPost;
+
+        AttachedPost.prototype.makeTextHighlighted = function () {
+            this.highlighted = true;
+        }
+
+
+        let dateOfPost = new Date().toLocaleString();
+        let example = new Post('Dan', 'old text', dateOfPost);
+        console.log(example.text);
+        example.edit('new text');
+        console.log(example.text);
+
+        let att_example = new AttachedPost('Luna', 'old text in attach', dateOfPost);
+        console.log(att_example.text);
+        att_example.edit('new text in attach');
+        console.log(att_example.text);
+        console.log(att_example.highlighted);
+        att_example.makeTextHighlighted();
+        console.log(att_example.highlighted);
+
+    </script>
+</body>
+
+</html>

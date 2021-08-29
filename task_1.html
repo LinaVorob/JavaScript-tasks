@@ -11,17 +11,28 @@
 <body>
     <script>
         'use strict';
-        for (let i = 0; i < 11; i++) {
-            if (i == 0) {
-                console.log(`${i} - это ноль`)
-            }
-            else if (i % 2 == 0) {
-                console.log(`${i} - четное число`)
+        /**
+        * Определение разрядов числа.
+        * @number {int} число от 0 до 999 включительно.
+        */
+
+        function partsOfNumber(number) {
+            if (!Number.isInteger(number) || number < 0 || number > 999) {
+                console.log('Неверное значение! Необходимо ввести целое число от 0 до 999')
+                return {}
             }
             else {
-                console.log(`${i} - нечетное число`)
+                return {
+                    units: number % 10,
+                    tens: Math.floor(number / 10) % 10,
+                    hundreds: Math.floor(number / 100),
+                }
             }
         }
+
+        let userNumber = +prompt('Введите целое число от 0 до 999: ')
+        console.log(partsOfNumber(userNumber));
+
     </script>
 </body>
 
