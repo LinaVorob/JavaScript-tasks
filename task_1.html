@@ -10,10 +10,29 @@
 
 <body>
     <script>
-        'use strict'
-        let Tc = +prompt("Введите температуру в градусах по Цельсию");
-        let Tf = (9 / 5) * Tc + 32;
-        alert(`Температура по Фаренгейту: ${Tf}`);
+        'use strict';
+        /**
+        * Определение разрядов числа.
+        * @number {int} число от 0 до 999 включительно.
+        */
+
+        function partsOfNumber(number) {
+            if (!Number.isInteger(number) || number < 0 || number > 999) {
+                console.log('Неверное значение! Необходимо ввести целое число от 0 до 999')
+                return {}
+            }
+            else {
+                return {
+                    units: number % 10,
+                    tens: Math.floor(number / 10) % 10,
+                    hundreds: Math.floor(number / 100),
+                }
+            }
+        }
+
+        let userNumber = +prompt('Введите целое число от 0 до 999: ')
+        console.log(partsOfNumber(userNumber));
+
     </script>
 </body>
 
